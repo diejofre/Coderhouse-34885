@@ -10,10 +10,18 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { capitalize } from "../../utils/functions.js";
 
-const ProductCard = ({ image, title, price, description, category, id }) => {
+const ProductCard = ({
+  image,
+  title,
+  price,
+  description,
+  category,
+  id,
+  getProduct,
+}) => {
   const path = useLocation().pathname;
 
   return (
@@ -25,7 +33,9 @@ const ProductCard = ({ image, title, price, description, category, id }) => {
           borderRadius="lg"
         />
         <Stack mt="6" spacing="3">
-          <Heading size="md">{title}</Heading>
+          <Link to={`/products/${id}`}>
+            <Heading size="md">{title}</Heading>
+          </Link>
           <Text>{description}</Text>
           <Text color="gray.500" fontSize="sm" fontWeight="bold">
             {capitalize(category)}
@@ -38,7 +48,11 @@ const ProductCard = ({ image, title, price, description, category, id }) => {
       <Divider />
       <CardFooter>
         <ButtonGroup spacing="2">
-          <Button variant="solid" colorScheme="green">
+          <Button
+            variant="solid"
+            colorScheme="green"
+            onClick={() => getProduct(id)}
+          >
             Ver producto
           </Button>
           {path === "/" ? (
