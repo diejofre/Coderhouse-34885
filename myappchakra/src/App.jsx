@@ -18,11 +18,13 @@ function App() {
   const [products, setProducts] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [favorite, setFavorite] = useState({});
+  const [loading, setLoading] = useState(true);
   const productsCollectionRef = collection(db, "products");
   const favoritesCollectionRef = collection(db, "favorites");
 
   const getProducts = async () => {
-    const data = await getDocs(productsCollectionRef);
+    const data = await getDocs(productsCollectionRef); // pedido async
+    setLoading(false);
     setProducts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
@@ -66,6 +68,7 @@ function App() {
             path="/"
             element={
               <Grid
+                loading={loading}
                 products={products}
                 addFavorite={addFavorite}
                 deleteFavorite={deleteFavorite}
