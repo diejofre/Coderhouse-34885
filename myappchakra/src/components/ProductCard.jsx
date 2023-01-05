@@ -13,16 +13,7 @@ import {
 import { useLocation } from "react-router-dom";
 import { capitalize } from "../../utils/functions.js";
 
-const ProductCard = ({
-  image,
-  title,
-  price,
-  description,
-  category,
-  addFavorite,
-  id,
-  deleteFavorite,
-}) => {
+const ProductCard = ({ image, title, price, description, category, id }) => {
   const path = useLocation().pathname;
 
   return (
@@ -48,7 +39,7 @@ const ProductCard = ({
       <CardFooter>
         <ButtonGroup spacing="2">
           <Button variant="solid" colorScheme="green">
-            Add to cart
+            Ver producto
           </Button>
           {path === "/" ? (
             <Button

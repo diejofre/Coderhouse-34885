@@ -9,7 +9,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   return (
     <>
