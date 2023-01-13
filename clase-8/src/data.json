@@ -1,0 +1,41 @@
+{
+  "movies": [
+    {
+      "name": "El camino",
+      "description": "Más fugitivo que nunca, Jesse Pinkman escapa de sus captores ...",
+      "score": "71%"
+    },
+    {
+      "name": "Gladiador",
+      "description": "El más famoso general romano, Maximus, acaba convertido en esclavo ...",
+      "score": "90%"
+    },
+    {
+      "name": "Volver al futuro",
+      "description": "Tras viajar al pasado por accidente en un DeLorean convertido en ...",
+      "score": "96%"
+    }
+  ],
+  "series": [
+    {
+      "name": "Breaking Bad",
+      "description": "Un profesor de Química de secundaria con cáncer terminal se asocia a ...",
+      "score": "99%"
+    },
+    {
+      "name": "Stranger Things",
+      "description": "Después de la extraña desaparición de un niño, un pueblo se encuentra ...",
+      "score": "92%"
+    },
+    {
+      "name": "Merlina",
+      "description": "Inteligente, sarcástica y un poco muerta por dentro, Merlina Addams investiga ...",
+      "score": "88%"
+    },
+    {
+      "name": "Better Call Saul",
+      "description": "Una serie nominada al Emmy que deriva de Breaking Bad y ...",
+      "score": "95%"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+html {
+  font-size: 2vw;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  background: hsl(0, 0%, 89%);
+}
+
+#root {
+  margin: 2rem;
+}
+
+header {
+  border-bottom: 1px solid rgb(45, 44, 44);
+  color: rgb(45, 44, 44);
+}
+
+header h1 {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+header h1 svg {
+  margin-left: 1rem;
+}
+
+main {
+  color: rgb(98, 96, 96);
+}
+
+main nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+main h3 {
+  color: rgb(232, 101, 120);
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  padding-left: 1.4rem;
+  list-style-type: none;
+}
+
+ul li strong {
+  padding-right: 0.3rem;
+  color: rgb(45, 44, 44);
+}
+
+ul li small {
+  font-style: italic;
+}
+
+ul li em {
+  float: right;
+}
+
+ul li svg {
+  vertical-align: middle;
+  margin-right: 1rem;
+}
