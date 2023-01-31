@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import db from "../db/firebase-config.js";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import Grid from "./Grid";
 import { Route, Routes } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
@@ -15,6 +15,12 @@ function App() {
     const querySnapshot = await getDocs(itemsCollectionRef);
     setItems(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     setLoading(false);
+  };
+
+  const deleteProduct = async (id) => {
+    const itemDocRef = doc(db, "items", id);
+    await deleteDoc(itemDocRef);
+    getItems();
   };
 
   useEffect(() => {
@@ -31,7 +37,13 @@ function App() {
         <Route path="/" element={<h1>Bienvenido/as</h1>} />
         <Route
           path="/items"
-          element={<Grid items={items} setItems={setItems} />}
+          element={
+            <Grid
+              items={items}
+              setItems={setItems}
+              deleteProduct={deleteProduct}
+            />
+          }
         />
         <Route path="/items/:id" element={<ItemDetail />} />
         <Route path="*" element={<h4>404</h4>} />

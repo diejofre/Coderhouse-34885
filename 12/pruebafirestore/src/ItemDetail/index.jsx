@@ -4,7 +4,7 @@ import styles from "./itemDetail.module.css";
 import db from "../../db/firebase-config.js";
 import { doc, getDoc } from "firebase/firestore";
 
-const ItemDetail = () => {
+const ItemDetail = ({ deleteProduct }) => {
   const { id } = useParams();
   const [item, setItem] = useState({});
 
