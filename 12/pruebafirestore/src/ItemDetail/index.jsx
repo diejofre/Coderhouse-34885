@@ -14,7 +14,7 @@ const ItemDetail = () => {
     if (itemDoc.exists()) {
       setItem(itemDoc.data());
     } else {
-      return null;
+      console.log("El ítem no existe");
     }
   };
 

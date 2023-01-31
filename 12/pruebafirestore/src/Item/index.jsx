@@ -1,6 +1,4 @@
 import styles from "./item.module.css";
-import db from "../../db/firebase-config.js";
-import { doc, getDoc } from "firebase/firestore";
 
 const Item = ({ item }) => {
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import db from "../db/firebase-config.js";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import Grid from "./Grid";
 import { Route, Routes } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
@@ -29,8 +29,12 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<h1>Bienvenido/as</h1>} />
-        <Route path="/items" element={<Grid items={items} />} />
+        <Route
+          path="/items"
+          element={<Grid items={items} setItems={setItems} />}
+        />
         <Route path="/items/:id" element={<ItemDetail />} />
+        <Route path="*" element={<h4>404</h4>} />
       </Routes>
     </div>
   );
