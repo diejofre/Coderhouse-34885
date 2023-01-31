@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import db from "../db/firebase-config.js";
 import { collection, getDocs } from "firebase/firestore";
+import Grid from "./Grid";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -9,8 +10,7 @@ function App() {
 
   const getItems = async () => {
     const querySnapshot = await getDocs(itemsCollectionRef);
-    const docs = querySnapshot.docs.map((doc) => doc.data());
-    setItems(docs);
+    setItems(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
   useEffect(() => {
@@ -19,9 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      {items.map((item) => {
-        return <p>{item.title}</p>;
-      })}
+      <Grid items={items} />
     </div>
   );
 }
